@@ -5,8 +5,6 @@ import Paper from 'material-ui/Paper';
 // import Typography from 'material-ui/Typography';
 import { typography } from 'material-ui/styles';
 
-var PropTypes = require('prop-types');
-
 const style = {
   width: '100vw',
   height: '90vh'
@@ -55,15 +53,17 @@ export class Container extends React.Component {
               onClick={this.onMarkerClick}
               title={'The marker`s title will appear as a tooltip.'}
               name={'Salvation Army'}
-              address={'2009 Bacharach Boulevard'}
-              hours={'Mon-Sun 10-11:30am'}
-              website={'https://www.acrescuemission.org'}
+              address={'22 S. Texas Avenue'}
+              hours={'Mon-Fri 9am-11:45am & 1pm-3pm'}
+              phone={'609-344-0660'}
+              website={'https://www.salvationarmy.org'}
               position={{lat: 39.3549, lng: -74.4429}} />
 
             <Marker onClick={this.onMarkerClick}
               title={'The marker`s title will appear as a tooltip.'}
-              name={'Turning Point Day Center for Homeless'}
-              address={'2009 Bacharach Boulevard'}
+              name={'Turning Point'}
+              tag={'Day Center for Homeless'}
+              address={'1717 Bishop Richard Allen Avenue'}
               hours={'Mon-Sat 8am-10pm & 2pm-1pm'}
               phone={'609-428-6163'}
               website={'https://www.facebook.com/TurningPointDayCenter'}
@@ -72,9 +72,9 @@ export class Container extends React.Component {
             <Marker onClick={this.onMarkerClick}
               title={'The marker`s title will appear as a tooltip.'}
               name={'Zion Redevelopment'}
-              address={'2009 Bacharach Boulevard'}
-              hours={'Mon-Sun 10-11:30am'}
-              website={'https://www.acrescuemission.org'}
+              address={'525 Atlantic Avenue'}
+              hours={'Wed 11am-1pm'}
+              phone={'609-348-9304'}
               position={{lat: 39.366664, lng: -74.41770839999998}} />
 
             <Marker onClick={this.onMarkerClick}
@@ -82,17 +82,20 @@ export class Container extends React.Component {
               name={'AC Rescue Mission'}
               address={'2009 Bacharach Boulevard'}
               hours={'Mon-Sun 10-11:30am'}
+              phone={'609-345-5517'}
               website={'https://www.acrescuemission.org'}
               position={{lat: 39.3650061, lng: -74.44001409999998}} />
 
               <InfoWindow
+                style={style.window}
                 marker={this.state.activeMarker}
                 visible={this.state.showingInfoWindow}>
                   <div>
                     <h1>{this.state.selectedPlace.name}</h1>
-                    <h4>{this.state.selectedPlace.hours}</h4>
-                    <h4>{this.state.selectedPlace.address}</h4>
-                    <h4><a href={this.state.selectedPlace.website} className="enter">{this.state.selectedPlace.website}</a></h4>
+                    <h5>{this.state.selectedPlace.tag}</h5>
+                    <h5>{this.state.selectedPlace.hours}</h5>
+                    <h5>{this.state.selectedPlace.address}</h5>
+                    <p><a href={this.state.selectedPlace.website} className="enter">{this.state.selectedPlace.website}</a></p>
                   </div>
               </InfoWindow>
           </Map>
@@ -102,7 +105,7 @@ export class Container extends React.Component {
 }
 
 const WrappedMap = GoogleApiWrapper({
-  apiKey: 'AIzaSyAIEVY_I_PCQD8mGdWo4IzYaoFDaCN3kCI'
+  apiKey: ''
 })(Container);
 
 module.exports = WrappedMap;

@@ -28585,7 +28585,7 @@
 	}(_react2.default.Component);
 
 	var WrappedMap = (0, _googleMapsReact.GoogleApiWrapper)({
-	  apiKey: 'AIzaSyAIEVY_I_PCQD8mGdWo4IzYaoFDaCN3kCI'
+	  apiKey: '_API_Key_'
 	})(Container);
 
 	module.exports = WrappedMap;

@@ -46,8 +46,13 @@ jQuery(document).ready(function($){
 		}
 	});
 
+	$('.gmnoprint').on('click', function(){
+		// $('.profile-container').find('.marker-profile').toggleClass('hide');
+		// $(body).find('.marker-image').toggleClass('hide');
+		alert("It worked!");
+	});
 
-  // Carousel
+	// Carousel
   // $('.carousel').slick({
   //   dots: true,
   //   infinite: true,

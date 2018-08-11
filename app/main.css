@@ -158,6 +158,39 @@ ul {
   margin-top: 20px;
 }
 
+.marker-image {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 38vh;
+  background: #ddd;
+  box-shadow: 1px 1px 5px 1px rgba(0,0,0,.25);
+  z-index: 1;
+  transition: all .75s ease;
+}
+
+.profile-container {
+  width: 100%;
+}
+
+.marker-profile {
+  position: absolute;
+  bottom: -28px;
+  left: 50%;
+  width: 90%;
+  height: 150px;
+  margin-left: -45%;
+  padding: 10px;
+  background: #ddd;
+  box-shadow: 1px 1px 5px 1px rgba(0,0,0,.25);
+  z-index: 1;
+  transition: all .75s ease;
+}
+
+.hide {
+  display: none;
+}
+
 @media only screen and (max-width: 599px) {
   .mobile-container {
     width: 100%;

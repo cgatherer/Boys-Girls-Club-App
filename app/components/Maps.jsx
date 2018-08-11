@@ -40,10 +40,25 @@ export class Container extends React.Component {
     }
 
     return (
+
       <div style={style}>
+        <div className="marker-image hide">
+
+        </div>
+
+        <div className="profile-container">
+          <div className="marker-profile hide">
+            <h1>{this.state.selectedPlace.name}</h1>
+            <h5>{this.state.selectedPlace.tag}</h5>
+            <h5>{this.state.selectedPlace.hours}</h5>
+            <h5>{this.state.selectedPlace.address}</h5>
+            <p><a href={this.state.selectedPlace.website} className="enter">{this.state.selectedPlace.website}</a></p>
+          </div>
+        </div>
+
         <Map
           item
-          xs = { 12 }
+          xs={12}
           google={this.props.google}
           onClick={this.onMapClick}
           zoom={13}
@@ -59,7 +74,8 @@ export class Container extends React.Component {
               website={'https://www.salvationarmy.org'}
               position={{lat: 39.3549, lng: -74.4429}} />
 
-            <Marker onClick={this.onMarkerClick}
+            <Marker
+              onClick={this.onMarkerClick}
               title={'The marker`s title will appear as a tooltip.'}
               name={'Turning Point'}
               tag={'Day Center for Homeless'}
@@ -69,15 +85,22 @@ export class Container extends React.Component {
               website={'https://www.facebook.com/TurningPointDayCenter'}
               position={{lat: 39.3656463, lng: -74.43630430000002}} />
 
-            <Marker onClick={this.onMarkerClick}
+            <Marker
+              onClick={this.onMarkerClick}
               title={'The marker`s title will appear as a tooltip.'}
+              icon={{
+                url: "http://nightowlmedia.co/images/cd-icon-location-green.png",
+                anchor: new google.maps.Point(32,32),
+                scaledSize: new google.maps.Size(64,64)
+              }}
               name={'Zion Redevelopment'}
               address={'525 Atlantic Avenue'}
               hours={'Wed 11am-1pm'}
               phone={'609-348-9304'}
               position={{lat: 39.366664, lng: -74.41770839999998}} />
 
-            <Marker onClick={this.onMarkerClick}
+            <Marker
+              onClick={this.onMarkerClick}
               title={'The marker`s title will appear as a tooltip.'}
               name={'AC Rescue Mission'}
               address={'2009 Bacharach Boulevard'}
@@ -86,7 +109,7 @@ export class Container extends React.Component {
               website={'https://www.acrescuemission.org'}
               position={{lat: 39.3650061, lng: -74.44001409999998}} />
 
-              <InfoWindow
+              {/* <InfoWindow
                 style={style.window}
                 marker={this.state.activeMarker}
                 visible={this.state.showingInfoWindow}>
@@ -97,7 +120,7 @@ export class Container extends React.Component {
                     <h5>{this.state.selectedPlace.address}</h5>
                     <p><a href={this.state.selectedPlace.website} className="enter">{this.state.selectedPlace.website}</a></p>
                   </div>
-              </InfoWindow>
+              </InfoWindow> */}
           </Map>
       </div>
     )

@@ -414,7 +414,7 @@ export class Container extends React.Component {
 }
 
 const WrappedMap = GoogleApiWrapper({
-  apiKey: 'AIzaSyAIEVY_I_PCQD8mGdWo4IzYaoFDaCN3kCI'
+  apiKey: 'API'
 })(Container);
 
 module.exports = WrappedMap;

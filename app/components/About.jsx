@@ -3,7 +3,7 @@ var {Link} = require('react-router');
 
 import mainLogo from '../assets/main-logo.png';
 import circleIMG from '../assets/circle.png';
-import student from '../assets/student.png'
+import student from '../assets/student.png';
 
 var About = React.createClass({
   render: function () {
